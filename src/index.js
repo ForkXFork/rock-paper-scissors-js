@@ -29,11 +29,22 @@ function computerPick(){
     }
 }
 
-const playerPick = 'Rock'
+var playerPick = prompt('Enter your selection: 1: Rock, 2: Paper, 3: Scissors', '1')
+
+if (playerPick == 1){
+    playerPick = 'Rock'
+} else if (playerPick == 2){
+    playerPick = 'Paper'
+} else if (playerPick == 3){
+    playerPick = 'Scissors'
+} else {
+    console.log('Error: Default to \'Rock\'')
+    playerPick = 'Rock'
+}
 
 var computerWins = 0
 var playerWins = 0
-for( let i = 0; i < 6; i++){
+for(let i = 0; i < 6; i++){
 
     const winner = playRound(playerPick, computerPick())
     console.log(winner)
