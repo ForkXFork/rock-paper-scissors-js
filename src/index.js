@@ -31,7 +31,36 @@ function computerPick(){
 
 const playerPick = 'Rock'
 
+var computerWins = 0
+var playerWins = 0
 for( let i = 0; i < 6; i++){
-    console.log(playRound(playerPick, computerPick()))
+
+    const winner = playRound(playerPick, computerPick())
+    console.log(winner)
+    const winnerCounter = (winnerVar) => {
+        if (winnerVar.includes('Player')){
+            return 'Player'
+        } else if (winnerVar.includes('Computer')) {
+            return 'Computer'
+        } else {
+            return 'Both'
+        }
+    }
+
+    if (winnerCounter(winner) == 'Player'){
+        playerWins++
+    } else if (winnerCounter(winner) == 'Computer'){
+        computerWins++
+    } else {
+        playerWins++
+        computerWins++
+    }
 }
 
+if (playerWins > computerWins){
+    console.log('>>> Player Wins! <<<')
+} else if (computerWins > playerWins){
+    console.log('>>> Computer Wins! <<<')
+} else {
+    console.log('>>> It\'s a tie! <<<')
+}
