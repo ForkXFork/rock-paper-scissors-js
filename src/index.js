@@ -11,6 +11,8 @@ function playRound(playerPick, computerPick){
         return 'Paper beats Rock! Player Wins!'
     } else if (computerPick == 'Paper' && playerPick == 'Scissors'){
         return 'Scissors beats Paper! Player Wins!'
+    } else {
+        return `${playerPick} and ${computerPick}!!! It's a tie!`
     }
 }
 
@@ -22,6 +24,8 @@ function computerPick(){
         return 'Paper';
     } else if (rnum ==2) {
         return 'Rock';
+    } else {
+        console.log(`Error: ${rnum}`)
     }
 }
 
