@@ -75,3 +75,5 @@ if (playerWins > computerWins){
 } else {
     console.log('>>> It\'s a tie! <<<')
 }
+
+// testing
